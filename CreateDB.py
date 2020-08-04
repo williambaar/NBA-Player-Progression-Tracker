@@ -26,7 +26,8 @@ mycursor.execute(
   
 #Create a table that holds all player statistics prior to quarantine
 mycursor.execute(
-                 "CREATE TABLE IF NOT EXISTS BeforeQ(Name VARCHAR(30) PRIMARY KEY, PTS FLOAT, FGM FLOAT,"
+                 "CREATE TABLE IF NOT EXISTS BeforeQ(Name VARCHAR(30) PRIMARY KEY," 
+                 "FOREIGN KEY(Name) REFERENCES Player(Name), PTS FLOAT, FGM FLOAT,"
                  "FGA FLOAT, FGPercent FLOAT, 3PM FLOAT, 3PA FLOAT,"
                  "3PPercent FLOAT, FTM FLOAT, FTA FLOAT, FTPercent FLOAT,"
                  "ORB FLOAT, DRB FLOAT, TRB FLOAT, AST FLOAT, TOV FLOAT,"
@@ -35,7 +36,8 @@ mycursor.execute(
            
 #Create a table that holds all player statistics after quarantine
 mycursor.execute(
-                 "CREATE TABLE IF NOT EXISTS AfterQ(Name VARCHAR(30) PRIMARY KEY, PTS FLOAT, FGM FLOAT,"
+                 "CREATE TABLE IF NOT EXISTS AfterQ(Name VARCHAR(30) PRIMARY KEY,"
+                 "FOREIGN KEY(Name) REFERENCES Player(Name), PTS FLOAT, FGM FLOAT,"
                  "FGA FLOAT, FGPercent FLOAT, 3PM FLOAT, 3PA FLOAT,"
                  "3PPercent FLOAT, FTM FLOAT, FTA FLOAT, FTPercent FLOAT,"
                  "ORB FLOAT, DRB FLOAT, TRB FLOAT, AST FLOAT, TOV FLOAT,"
